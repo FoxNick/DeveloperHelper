@@ -248,7 +248,7 @@ public final class NetBareVirtualGateway extends VirtualGateway {
             }
             String name = nameValue[0].trim();
             String value = requestHeader.replaceFirst(nameValue[0] + ": ", "").trim();
-            if (name.toLowerCase().equals("host")) {
+            if ("host".equals(name.toLowerCase())) {
                 return value;
             }
         }

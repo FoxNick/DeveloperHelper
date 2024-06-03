@@ -237,15 +237,15 @@ import java.util.Map;
             String status = null;
             List<Header> headers = new ArrayList<>();
             for (Header header : mHeaders) {
-                if (header.name.equals(Header.TARGET_METHOD)) {
+                if (Header.TARGET_METHOD.equals(header.name)) {
                     method = header.value;
-                } else if (header.name.equals(Header.TARGET_PATH)) {
+                } else if (Header.TARGET_PATH.equals(header.name)) {
                     path = header.value;
-                } else if (header.name.equals(Header.TARGET_AUTHORITY)) {
+                } else if (Header.TARGET_AUTHORITY.equals(header.name)) {
                     host = header.value;
-                } else if (header.name.equalsIgnoreCase("host")) {
+                } else if ("host".equalsIgnoreCase(header.name)) {
                     host = header.value;
-                } else if (header.name.equalsIgnoreCase(Header.RESPONSE_STATUS)) {
+                } else if (Header.RESPONSE_STATUS.equalsIgnoreCase(header.name)) {
                     status = header.value;
                 } else {
                     headers.add(header);
@@ -264,7 +264,7 @@ import java.util.Map;
                 headers.add(0, new Header("Host", host));
             }
             for (Header header : headers) {
-                if (header.name.equals(Header.TARGET_SCHEME)) {
+                if (Header.TARGET_SCHEME.equals(header.name)) {
                     continue;
                 }
                 sb.append(header.name).append(": ");

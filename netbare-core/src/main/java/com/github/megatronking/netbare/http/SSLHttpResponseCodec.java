@@ -90,9 +90,9 @@ import javax.net.ssl.SSLEngine;
     private void enableAlpn() {
         try {
             String sslEngineName = mSSLEngine.getClass().getSimpleName();
-            if (sslEngineName.equals("Java8EngineWrapper")) {
+            if ("Java8EngineWrapper".equals(sslEngineName)) {
                 enableJava8EngineWrapperAlpn();
-            } else if (sslEngineName.equals("ConscryptEngine")) {
+            } else if ("ConscryptEngine".equals(sslEngineName)) {
                 enableConscryptEngineAlpn();
             } else {
                 enableOpenSSLEngineImplAlpn();
@@ -175,9 +175,9 @@ import javax.net.ssl.SSLEngine;
         String alpnResult = null;
         try {
             String sslEngineName = mSSLEngine.getClass().getSimpleName();
-            if (sslEngineName.equals("Java8EngineWrapper")) {
+            if ("Java8EngineWrapper".equals(sslEngineName)) {
                 alpnResult = getJava8EngineWrapperAlpn();
-            } else if (sslEngineName.equals("ConscryptEngine")){
+            } else if ("ConscryptEngine".equals(sslEngineName)){
                 alpnResult = getConscryptEngineAlpn();
             } else {
                 alpnResult = getOpenSSLEngineImplAlpn();

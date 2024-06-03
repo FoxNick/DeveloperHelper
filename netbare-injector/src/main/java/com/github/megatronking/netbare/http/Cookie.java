@@ -370,29 +370,29 @@ public final class Cookie {
                     ? trimSubstring(setCookie, attributeEqualsSign + 1, attributePairEnd)
                     : "";
 
-            if (attributeName.equalsIgnoreCase("expires")) {
+            if ("expires".equalsIgnoreCase(attributeName)) {
                 try {
                     expiresAt = parseExpires(attributeValue, attributeValue.length());
                     persistent = true;
                 } catch (IllegalArgumentException e) {
                     // Ignore this attribute, it isn't recognizable as a date.
                 }
-            } else if (attributeName.equalsIgnoreCase("max-age")) {
+            } else if ("max-age".equalsIgnoreCase(attributeName)) {
                 try {
                     deltaSeconds = parseMaxAge(attributeValue);
                     persistent = true;
                 } catch (NumberFormatException e) {
                     // Ignore this attribute, it isn't recognizable as a max age.
                 }
-            } else if (attributeName.equalsIgnoreCase("domain")) {
+            } else if ("domain".equalsIgnoreCase(attributeName)) {
                 domain = attributeValue;
-            } else if (attributeName.equalsIgnoreCase("path")) {
+            } else if ("path".equalsIgnoreCase(attributeName)) {
                 path = attributeValue;
-            } else if (attributeName.equalsIgnoreCase("secure")) {
+            } else if ("secure".equalsIgnoreCase(attributeName)) {
                 secureOnly = true;
-            } else if (attributeName.equalsIgnoreCase("httponly")) {
+            } else if ("httponly".equalsIgnoreCase(attributeName)) {
                 httpOnly = true;
-            } else if (attributeName.equalsIgnoreCase("priority")) {
+            } else if ("priority".equalsIgnoreCase(attributeName)) {
                 priority = attributeValue;
             }
 

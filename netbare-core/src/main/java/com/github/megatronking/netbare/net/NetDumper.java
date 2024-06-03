@@ -108,8 +108,8 @@ import java.io.InputStreamReader;
                         continue;
                     }
                     String remoteIp = parseIp(remote[0]);
-                    if (remoteIp == null || remoteIp.equals("0.0.0.0")
-                            || remoteIp.equals("255.255.255.255")) {
+                    if (remoteIp == null || "0.0.0.0".equals(remoteIp)
+                            || "255.255.255.255".equals(remoteIp)) {
                         continue;
                     }
                     int localPort = parsePort(local[1]);

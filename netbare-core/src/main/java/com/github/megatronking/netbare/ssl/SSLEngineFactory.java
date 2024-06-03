@@ -148,8 +148,8 @@ public final class SSLEngineFactory {
         SSLEngine engine = sslContext.createSSLEngine(ip, port);
         List<String> ciphers = new LinkedList<>();
         for (String each : engine.getEnabledCipherSuites()) {
-            if (!each.equals("TLS_DHE_RSA_WITH_AES_128_CBC_SHA") &&
-                    !each.equals("TLS_DHE_RSA_WITH_AES_256_CBC_SHA")) {
+            if (!"TLS_DHE_RSA_WITH_AES_128_CBC_SHA".equals(each) &&
+                    !"TLS_DHE_RSA_WITH_AES_256_CBC_SHA".equals(each)) {
                 ciphers.add(each);
             }
         }

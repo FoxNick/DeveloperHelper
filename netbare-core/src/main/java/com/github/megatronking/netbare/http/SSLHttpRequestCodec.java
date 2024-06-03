@@ -76,9 +76,9 @@ import javax.net.ssl.SSLEngine;
         }
         try {
             String sslEngineName = sslEngine.getClass().getSimpleName();
-            if (sslEngineName.equals("Java8EngineWrapper")) {
+            if ("Java8EngineWrapper".equals(sslEngineName)) {
                 enableJava8EngineWrapperAlpn(sslEngine);
-            } else if (sslEngineName.equals("ConscryptEngine")) {
+            } else if ("ConscryptEngine".equals(sslEngineName)) {
                 enableConscryptEngineAlpn(sslEngine);
             } else {
                 enableOpenSSLEngineImplAlpn(sslEngine);
