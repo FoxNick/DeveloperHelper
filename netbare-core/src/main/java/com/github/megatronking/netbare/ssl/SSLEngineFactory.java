@@ -197,7 +197,7 @@ public final class SSLEngineFactory {
         try {
             return SSLContext.getInstance(SSL_CONTEXT_PROTOCOL);
         } catch (NoSuchAlgorithmException e) {
-            return SSLContext.getInstance(SSL_CONTEXT_FALLBACK_PROTOCOL);
+            return SSLContext.getInstance("TLSv1.2");
         }
     }
 
