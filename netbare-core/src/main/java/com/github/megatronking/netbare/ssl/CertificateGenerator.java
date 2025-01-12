@@ -202,7 +202,7 @@ public final class CertificateGenerator {
     }
 
     private long randomSerial() {
-        final Random rnd = new Random();
+        final Random rnd = new SecureRandom();
         rnd.setSeed(System.currentTimeMillis());
         // prevent browser certificate caches, cause of doubled serial numbers
         // using 48bit random number
