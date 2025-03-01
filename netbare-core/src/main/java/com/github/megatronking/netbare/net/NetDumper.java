@@ -17,6 +17,7 @@ package com.github.megatronking.netbare.net;
 
 import com.github.megatronking.netbare.NetBareLog;
 import com.github.megatronking.netbare.NetBareUtils;
+import io.github.pixee.security.BoundedLineReader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -80,7 +81,7 @@ import java.io.InputStreamReader;
                 reader = new BufferedReader(new InputStreamReader(is));
                 String line;
                 int index = 0;
-                while ((line = reader.readLine()) != null) {
+                while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
                     index++;
                     if (index == 1) {
                         // Skip the table title
